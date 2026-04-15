@@ -26,7 +26,7 @@ export LEGO_PATH
 
 archive_path="/usr/syno/etc/certificate/_archive"
 cert_path="$LEGO_PATH/certificates"
-cert_domain="${DOMAINS[1]#\*.}"
+cert_domain=$(basename "$(ls "$cert_path"/*.key)" .key)
 hook_path="$LEGO_PATH/hook"
 mkdir -p "$cert_path"
 
